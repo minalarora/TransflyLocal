@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_screen_image"
+    >
+
+    <Spinner
+        android:id="@+id/from"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12sp"
+        android:entries="@android:array/emailAddressTypes"
+        app:layout_constraintBottom_toTopOf="@+id/to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Spinner
+        android:id="@+id/to"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12sp"
+        android:entries="@android:array/emailAddressTypes"
+        app:layout_constraintBottom_toTopOf="@+id/vehicle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from" />
+
+    <Spinner
+        android:id="@+id/vehicle"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12sp"
+        android:entries="@android:array/emailAddressTypes"
+        app:layout_constraintBottom_toTopOf="@+id/driver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to" />
+
+    <EditText
+        android:id="@+id/driver"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12sp"
+        android:hint="Driver Number"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle" />
+
+    <RelativeLayout
+        android:id="@+id/confirm_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/design_as_edittext_gradient"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Confirm"
+            android:textColor="@color/red"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+    <include
+        android:id="@+id/parent_of_loading"
+        layout="@layout/loading"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
